@@ -3,9 +3,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
 var app = express();
 
 app.use(logger('dev'));
@@ -13,9 +10,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 const { Client } = require('pg')
 app.set("etag", false);
@@ -77,7 +71,7 @@ app.get('/top10authors', flatCacheMiddleware, function(req, res){
 
         const client = new Client({
                 user: 'postgres',
-                host: 'localhost',
+                host: 'postgresql',
                 database: 'postgres',
                 password: 'postgres',
                 port: 5432,
@@ -104,4 +98,4 @@ app.get('/top10authors', flatCacheMiddleware, function(req, res){
         });
 });
 
-module.exports = app;
+app.listen(8080, () => { console.log("Listening .... 8080 port")})
