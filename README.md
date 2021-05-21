@@ -131,9 +131,9 @@ let flatCacheMiddleware = (req,res, next) => {
 </code>
 </pre>
 
-### Result : With the use of caching layer, the performance was improved as below.
-![plot](./img/2b_bf.JPG)
-![plot](./img/2b_af.JPG)
+#### Result : With the use of caching layer, the performance was improved as below.
+![plot](./img/2b_bf.PNG)
+![plot](./img/2b_af.PNG)
 
 
 <hr/>
