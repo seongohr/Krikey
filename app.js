@@ -20,7 +20,6 @@ app.use('/users', usersRouter);
 const { Client } = require('pg')
 app.set("etag", false);
 
-// https://scotch.io/tutorials/how-to-optimize-node-requests-with-simple-caching-strategies
 const flatCache = require('flat-cache')
 let cache = flatCache.load('productsCache');
 let flatCacheMiddleware = (req,res, next) => {
