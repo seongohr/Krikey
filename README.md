@@ -39,6 +39,38 @@ LIMIT 10;
 <hr/>
 
 ## Part 2A: Write an API Endpoint
+<pre>
+Endpoint: /top10authors?author_name=
+</pre>
+
+### Conditions: 
+<pre>
+<code>
+1. If a client doesn't give an author's name :
+    - status Code : 
+    - provide the top 10 performing authors with sales revenue, ranked by sales revenue
+2. If there is a problem on 
+    - status Code : 
+    - 
+3. If a client give an author's name which exists in the database:
+    - status Code : 400
+    - 
+
+</code>
+</pre>
+
+<hr/>
+
+## Part 2B: API Performance
+
+
+### Results
+<pre>
+<code>
+
+</code>
+</pre>
+
 
 <hr/>
 
