@@ -1,4 +1,4 @@
-# Krikey code challenge
+# ## Krikey code challenge
 ## Part 1: SQL Challenge
 ### 1. Who are the first 10 authors ordered by date_of_birth?
 <pre>
