@@ -43,7 +43,7 @@ LIMIT 10;
 Endpoint: /top10authors?author_name=<name of an author>
 </pre>
 
-This API sends a client with the received author's name and the sales revenue of the author, if the name is in the top 10 authors, ranked by sales revenue. 
+This API sends the received author's name and the sales revenue of the author to the client, if the name is in the top 10 authors, ranked by sales revenue. 
 
 ### Conditions: 
 <pre>
@@ -72,9 +72,12 @@ This API sends a client with the received author's name and the sales revenue of
 #### URL : /top10authors?author_name=Kari Peterson
 {
     "result":"db server connected",
-    "rows":[
-        {"name":"Kari Peterson","sum":"$11,539,341.97"}
-        ]
+    "rows":
+    [
+        {
+            "name":"Kari Peterson","sum":"$11,539,341.97"
+        }
+    ]
  }
  
 #### URL : /top10authors?author_name=
@@ -129,7 +132,8 @@ let flatCacheMiddleware = (req,res, next) => {
 </pre>
 
 ### Result : With the use of caching layer, the performance was improved as below.
-
+![plot](./img/2b_bf.JPG)
+![plot](./img/2b_af.JPG)
 
 
 <hr/>
