@@ -70,14 +70,15 @@ This API sends the received author's name and the sales revenue of the author to
 <pre>
 <code>
 {
-    "result":"db server connected",
-    "rows":
+    "status":200,
+    "message":"DB server connected",
+    "result":
     [
-        {
-            "name":"Kari Peterson","sum":"$11,539,341.97"
+        {"name":"Kari Peterson",
+        "sum":"$11,539,341.97"
         }
     ]
- }
+}
 </code>
 </pre>
 
@@ -85,23 +86,29 @@ This API sends the received author's name and the sales revenue of the author to
 <pre>
 <code>
 {
-    "result":"db server connected",
-    "rows":
+    "status":200,
+    "message":"DB server connected",
+    "result":
     [
         {
-            "name":"Renee Gross","sum":"$14,001,994.64"
+            "name":"Renee Gross",
+            "sum":"$14,001,994.64"
         },
         {
-            "name":"Kari Peterson","sum":"$11,539,341.97"
+            "name":"Kari Peterson",
+            "sum":"$11,539,341.97"
         },
-                                ...
-        {
-            "name":"Danny Kim","sum":"$7,628,651.47"
+                                .....
+                                
+        {   
+            "name":"Danny Kim",
+            "sum":"$7,628,651.47"
         },
         {
-            "name":"Raquel Montgomery","sum":"$7,621,652.22"
+            "name":"Raquel Montgomery",
+            "sum":"$7,621,652.22"
         }
-    ]
+   ]
 }
 
 </code>
