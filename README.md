@@ -116,7 +116,7 @@ This API sends the received author's name and the sales revenue of the author to
 ![plot](https://raw.githubusercontent.com/seongohr/Krikey/main/img/2b_af.png)
 
 
-#### Caching layer
+### #Caching layer
 <pre>
 <code>
 
