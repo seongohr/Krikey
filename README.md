@@ -106,6 +106,11 @@ This API sends the received author's name and the sales revenue of the author to
 <hr/>
 
 ## Part 2B: API Performance
+
+### Result : With the use of caching layer, the performance was improved as below.
+![plot](https://github.com/seongohr/Krikey/blob/main/img/2b_bf.png)
+![plot](https://raw.githubusercontent.com/seongohr/Krikey/main/img/2b_af.png)
+
 <pre>
 <code>
 #### Caching layer
@@ -130,10 +135,6 @@ let flatCacheMiddleware = (req,res, next) => {
 
 </code>
 </pre>
-
-#### Result : With the use of caching layer, the performance was improved as below.
-![plot](https://github.com/seongohr/Krikey/blob/main/img/2b_bf.png)
-![plot](https://raw.githubusercontent.com/seongohr/Krikey/main/img/2b_af.png)
 
 
 <hr/>
