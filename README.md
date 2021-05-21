@@ -27,9 +27,9 @@ ON s.book_id = b.id;
 <code>
 SELECT a.name, sum(s.item_price * s.quantity)
 FROM sale_items AS s
-    JOIN books AS b
-        JOIN authors AS a ON b.author_id = a.id
-    ON s.book_id = b.id
+JOIN books AS b
+    JOIN authors AS a ON b.author_id = a.id
+ON s.book_id = b.id
 GROUP BY a.name
 ORDER BY sum(s.item_price * s.quantity) DESC
 LIMIT 10;
@@ -60,16 +60,15 @@ This API sends the received author's name and the sales revenue of the author to
 4. If a client doesn't give a name,
     - status Code : 200
     - send the top 10 authors, ranked by sales revenue.
-<!-- 1. If a client doesn't give an author's name :
-    - status Code :  
-    - provide the top 10 performing authors with sales revenue, ranked by sales revenue-->
+
 </code>
 </pre>
 
 ### Results :
+
+#### URL : /top10authors?author_name=Kari Peterson
 <pre>
 <code>
-#### URL : /top10authors?author_name=Kari Peterson
 {
     "result":"db server connected",
     "rows":
@@ -79,27 +78,32 @@ This API sends the received author's name and the sales revenue of the author to
         }
     ]
  }
- 
+</code>
+</pre>
+
 #### URL : /top10authors?author_name=
+<pre>
+<code>
 {
     "result":"db server connected",
     "rows":
-        [
-            {
-                "name":"Renee Gross","sum":"$14,001,994.64"
-            },
-            {
-                "name":"Kari Peterson","sum":"$11,539,341.97"
-            },
-                                    ...
-            {
-                "name":"Danny Kim","sum":"$7,628,651.47"
-            },
-            {
-                "name":"Raquel Montgomery","sum":"$7,621,652.22"
-            }
-        ]
+    [
+        {
+            "name":"Renee Gross","sum":"$14,001,994.64"
+        },
+        {
+            "name":"Kari Peterson","sum":"$11,539,341.97"
+        },
+                                ...
+        {
+            "name":"Danny Kim","sum":"$7,628,651.47"
+        },
+        {
+            "name":"Raquel Montgomery","sum":"$7,621,652.22"
+        }
+    ]
 }
+
 </code>
 </pre>
 
@@ -111,9 +115,10 @@ This API sends the received author's name and the sales revenue of the author to
 ![plot](https://github.com/seongohr/Krikey/blob/main/img/2b_bf.png)
 ![plot](https://raw.githubusercontent.com/seongohr/Krikey/main/img/2b_af.png)
 
+
+#### Caching layer
 <pre>
 <code>
-#### Caching layer
 
 const flatCache = require('flat-cache')
 let cache = flatCache.load('productsCache');
