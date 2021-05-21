@@ -20,6 +20,7 @@ app.use('/users', usersRouter);
 const { Client } = require('pg')
 app.set("etag", false);
 
+// https://scotch.io/tutorials/how-to-optimize-node-requests-with-simple-caching-strategies
 const flatCache = require('flat-cache')
 let cache = flatCache.load('productsCache');
 let flatCacheMiddleware = (req,res, next) => {
@@ -85,17 +86,18 @@ app.get('/top10authors', flatCacheMiddleware, function(req, res){
         client.query(query, (err, result) => {
                 if (err) {
                         res.statusCode = 500
-                        message = 'Internal Server Error'
-                        res.send(JSON.stringify({ result : message }));
+                        let message = 'Internal Server Error'
+                        res.send(JSON.stringify({ status: 500, message : message }));
+                        console.log(status)
                 } else {
                         if (!result.rowCount) {
                                 res.statusCode = 400
-                                message = "The author doesn't exist."
-                                res.send(JSON.stringify({ result : message }));
+                                let message = "The author doesn't exist."
+                                res.send(JSON.stringify({ status: 400, message : message }));
                         } else {
                                 res.statusCode = 200
-                                message = 'db server connected'
-                                res.send(JSON.stringify({ result : message, rows: result.rows }));
+                                let message = 'DB server connected'
+                                res.send(JSON.stringify({ status: 200, message : message, result: result.rows }));
                         }
                 }
                 client.end();
