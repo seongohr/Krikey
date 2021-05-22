@@ -44,25 +44,7 @@ Endpoint: /top10authors?author_name=<name of an author>
 </pre>
 
 This API sends the received author's name and the sales revenue of the author to the client, if the name is in the top 10 authors, ranked by sales revenue. 
-
-### Conditions: 
-<pre>
-<code>
-1. If there is a problem on the server,
-    - status Code : 500
-    - message : Internal Server Error
-2. If a client give an invalid name,
-    - status Code : 400
-    - message : Invalid Name
-3. If the name is not in the database,
-    - status Code: 400
-    - message : The author doesn't exist.
-4. If a client doesn't give a name,
-    - status Code : 200
-    - send the top 10 authors, ranked by sales revenue.
-
-</code>
-</pre>
+( * If a client doesn't give a name, send the top 10 authors, ranked by sales revenue.)
 
 ### Results :
 
@@ -83,6 +65,7 @@ This API sends the received author's name and the sales revenue of the author to
 </pre>
 
 #### URL : /top10authors?author_name=
+
 <pre>
 <code>
 {
@@ -98,7 +81,7 @@ This API sends the received author's name and the sales revenue of the author to
             "name":"Kari Peterson",
             "sum":"$11,539,341.97"
         },
-                                .....
+                   .....
                                 
         {   
             "name":"Danny Kim",
@@ -118,7 +101,7 @@ This API sends the received author's name and the sales revenue of the author to
 
 ## Part 2B: API Performance
 
-### Result : With the use of caching layer, the performance was improved as below.
+### Result : With the use of caching layer, the performance was improved as below. You can see the time was reduced in the second picture.
 ![plot](https://github.com/seongohr/Krikey/blob/main/img/2b_bf.png)
 ![plot](https://raw.githubusercontent.com/seongohr/Krikey/main/img/2b_af.png)
 
