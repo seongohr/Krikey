@@ -152,5 +152,12 @@ let flatCacheMiddleware = (req,res, next) => {
 <hr/>
 
 ## Part 3: Build Docker Container and steps to deploy
+You can see the details for deploying docker images on GCP Here. 
+
+Before following the steps in the pdf file, you should prepare
+1. Node js applications. 
+2. ‘Dockerfile’ for Node js.
+3. ‘docker-compose.yml’ for Node js and Postgresql.
+
 
 <hr/>
