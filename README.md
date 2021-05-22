@@ -40,12 +40,12 @@ LIMIT 10;
 
 ## Part 2A: Write an API Endpoint
 <pre>
-API : /top10authors?author_name=<name of an author>
+API : /top10authors?author_name='name of an author'
 </pre>
-( <name of an author> should be replaced with a name.) 
+( 'name of an author' should be replaced with a name.) 
 
 
-This API sends the received author's name and the sales revenue of the author to the client, if the name is in the top 10 authors, ranked by sales revenue. 
+This API sends the received author's name and the sales revenue of the author to the client, if the name is in the top 10 authors, ranked by sales revenue.</br>
 ( * If a client doesn't give a name, send the top 10 authors, ranked by sales revenue.)
 
 ### Results :
